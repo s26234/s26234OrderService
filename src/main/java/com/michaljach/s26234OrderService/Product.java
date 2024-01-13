@@ -1,18 +1,39 @@
 package com.michaljach.s26234OrderService;
 
 public class Product {
-    private String idProd;
+    private int idProd;
+    private String name;
+    private int quantity;
 
-    public Product (String idProd) {
+    public Product (int idProd, String name, int quantity) {
         this.idProd = idProd;
+        this.name = name;
+        this.quantity = quantity;
+
     }
 
-    public String getIdProd() {
+    public int getIdProd() {
         return idProd;
     }
 
-    public void setId(String idProd) {
-        this.idProd = idProd;
+    public String getName() {
+        return name;
     }
 
+    public  double getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "idProd=" + idProd +
+                ", name='" + name + '\'' +
+                ", quantity=" + quantity +
+                '}';
+    }
 }

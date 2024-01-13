@@ -18,10 +18,11 @@ public class OrderStorage {
         orderList.add(order);
     }
 
-    // find product ??
+    public Order getOrderById( int idOrder) {
+        return orderList.stream().filter(order -> order.getClient().getIdClient() == idOrder).findFirst().orElseThrow(()->new IllegalArgumentException("Brak zamówienia o id " + idOrder));
 
-    // find product by id ??
+    }
 
-    // purge database
+
 
 }

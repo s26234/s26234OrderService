@@ -2,31 +2,50 @@ package com.michaljach.s26234OrderService;
 
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 
 public class Order {
     private Client client;
-    private ProductStorage productStorage;
+    private List<Product> orderItems;
     private String address ="";
+    private OrderStatus status;
 
-public Order (Client client, ProductStorage productStorage, String address) {
+public Order (Client client, List<Product> orderItems, String address, OrderStatus orderStatus) {
     this.client = client;
-    this.productStorage = productStorage;
+    this.orderItems = orderItems;
     this.address = address;
+    this.status = OrderStatus.NOWE;
+
 }
 
 public Client getClient() {
     return client;
 }
 
-public ProductStorage getProductStorage() {
-    return productStorage;
+public List<Product> getOrderItems() {
+    return orderItems;
 }
 
-public String getAddress() {
+    public OrderStatus getStatus() {
+        return status;
+    }
+
+    public String getAddress() {
     return address;
 }
 
+public void setStatus (OrderStatus status) {
+    this.status = status;
+}
 
-
-
+    @Override
+    public String toString() {
+        return "Order{" +
+                "client=" + client +
+                ", orderItems=" + orderItems +
+                ", address='" + address + '\'' +
+                ", status=" + status +
+                '}';
+    }
 }
