@@ -35,6 +35,7 @@ public class OrderService {
         return false;
     }
 
+
     public boolean confirmDelivery (int idOrder) {
         Order order = orderStorage.getOrderById(idOrder);
         if(order.getStatus() == OrderStatus.W_REALIZACJI) {
@@ -67,5 +68,6 @@ public class OrderService {
             throw new IllegalArgumentException("Produkt " + product.getIdProd() + " nie istnieje");
         }
     }
+
 
 }

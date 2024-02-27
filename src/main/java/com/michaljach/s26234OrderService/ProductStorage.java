@@ -21,5 +21,4 @@ public class ProductStorage {
         return productStorage.stream().filter(product -> product.getIdProd()==id).findFirst().orElseThrow(()-> new IllegalArgumentException("Brak produktu z id " + id));
     }
 
-
 }

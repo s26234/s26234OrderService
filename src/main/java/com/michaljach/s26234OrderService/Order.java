@@ -19,7 +19,10 @@ public Order (Client client, List<Product> orderItems, String address, OrderStat
 
 }
 
-public Client getClient() {
+//    public Order(Client client, ProductStorage productStorage, String testAddress) {
+//    }
+
+    public Client getClient() {
     return client;
 }
 
